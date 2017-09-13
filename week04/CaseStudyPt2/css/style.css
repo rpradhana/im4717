@@ -1,10 +1,11 @@
 body {
-	font-family:Verdana, Arial, sans-serif;
+	font-family: Verdana, Arial, sans-serif;
 	color: #2E0000;
 	background-color: #F4EDB6;
 	margin: 0;
 	font-size: 14px;
 	line-height: 1.3em;
+	width: 100%;
 }
 ul {
 	margin:0px;
@@ -16,10 +17,11 @@ h2 {
 a {
 	color: #795240;
 }
-a:hover {
-	color: #A58366;
-}
 a:visited {
+	color: #795240;
+}
+a:hover,
+a:focus {
 	color: #A58366;
 }
 nav ul {
@@ -35,7 +37,6 @@ nav a {
 }
 header{
 	background-color: #D2B48C;
-	font-size: 150%; 
 	padding: 10px 0px;
 	text-align: center;
 }
@@ -50,19 +51,22 @@ footer {
 	width: 80%;
 	margin: auto;
 	margin-top: 40px;
-	min-width:850px;
 	background-color: #E2D2B0;
-	-webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow:    5px 5px 5px 0px rgba(0,0,0,0.75);
-	box-shadow:         5px 5px 5px 0px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.row {
+	display: flex;
+	width: 100%;
 }
 .col-left {
-	float: left;
 	width: 150px;
 	background-color: #E2D2B0;
 }
 .col-right {
-	margin-left: 150px;
+	vertical-align: top;
+	width: 100%;
 	background-color: #F4F4DB;
 }
 .float-right {
@@ -74,9 +78,6 @@ footer {
 }
 .content > h2 {
 	margin-top: 0;
-}
-.inline-block {
-	display: inline-block;
 }
 .margin-left-s {
 	margin-left: 16px;
@@ -90,6 +91,67 @@ footer {
 .margin-top-s{
 	margin-top: 16px;
 }
+.inline-block {
+	display: inline-block;
+}
 .align-top {
 	vertical-align: top;
+}
+.align-center {
+	text-align: center;
+}
+.content-left {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	margin-right: 16px;
+	margin-bottom: 16px;
+}
+.content-right {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+table {
+	max-width: 800px;
+	margin: auto;
+}
+tr:nth-child(odd) {
+	background-color: #D2B48C;
+}
+td {
+	padding: 0px 20px;
+}
+.music-item {
+	max-width: 640px;
+	margin: 40px auto;
+	text-align: left;
+}
+.music-item > h3{
+	background-color: #E2D2B0;
+	margin: 0px auto;
+	padding: 8px;
+}
+.music-item > div.content-left > img,
+.music-item > div.content-left > video {
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 16px;
+}
+.job-application > label {
+	margin: 8px 16px 8px 0px;
+	display: block;
+	float: left;
+	clear: left;
+	text-align: right;
+	width: 110px;
+}
+.job-application > input,
+.job-application > textarea {
+	margin: 8px 16px 8px 0px;
+	float: left;
+}
+.job-application > .btn-submit {
+	clear: left;
+	margin: 20px 0px;
 }
