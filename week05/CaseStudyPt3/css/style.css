@@ -1,3 +1,6 @@
+/**
+ * Global
+ */
 body {
 	font-family: Verdana, Arial, sans-serif;
 	color: #2E0000;
@@ -53,8 +56,8 @@ footer {
 	margin-top: 40px;
 	background-color: #E2D2B0;
 	-webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow:    5px 5px 5px 0px rgba(0, 0, 0, 0.75);
-	box-shadow:         5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:	5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:		 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 .row {
 	display: flex;
@@ -100,6 +103,14 @@ footer {
 .align-center {
 	text-align: center;
 }
+.invalid {
+	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,0,0,0.8);
+	-moz-box-shadow: 0px 0px 1px 1px rgba(255,0,0,0.8);
+	box-shadow: 0px 0px 1px 1px rgba(255,0,0,0.8);
+}
+/**
+ * Override
+ */
 .content-left {
 	display: inline-block;
 	vertical-align: top;
@@ -138,7 +149,7 @@ td {
 	vertical-align: top;
 	margin-bottom: 16px;
 }
-.job-application > label {
+.job-application label {
 	margin: 8px 16px 8px 0px;
 	display: block;
 	float: left;
@@ -146,12 +157,23 @@ td {
 	text-align: right;
 	width: 110px;
 }
-.job-application > input,
-.job-application > textarea {
+.job-application input,
+.job-application textarea {
 	margin: 8px 16px 8px 0px;
 	float: left;
 }
-.job-application > .btn-submit {
+.job-application .btn-submit {
 	clear: left;
 	margin: 20px 0px;
+}
+#menu ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+#menu ul > li {
+	margin-bottom: 5px;
+}
+#menu input[type=number] {
+	width: 40px;
 }
