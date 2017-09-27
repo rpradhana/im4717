@@ -23,8 +23,7 @@ function handleInputChange() {
 	if (item1[0].checked) {
 		subtotal1 = item1[0].value * amount1;
 		$('#subtotal-1').innerHTML = '$' + subtotal1;
-	}
-	else if (item1[1].checked) {
+	} else if (item1[1].checked) {
 		subtotal1 = item1[1].value * amount1;
 		$('#subtotal-1').innerHTML = '$' + subtotal1;
 	}
@@ -33,8 +32,7 @@ function handleInputChange() {
 	if (item2[0].checked) {
 		subtotal2 = item2[0].value * amount2;
 		$('#subtotal-2').innerHTML = '$' + subtotal2;
-	}
-	else if (item2[1].checked) {
+	} else if (item2[1].checked) {
 		subtotal2 = item2[1].value * amount2;
 		$('#subtotal-2').innerHTML = '$' + subtotal2;
 	}
@@ -43,14 +41,12 @@ function handleInputChange() {
 	if (item3[0].checked) {
 		subtotal3 = item3[0].value * amount3;
 		$('#subtotal-3').innerHTML = '$' + subtotal3;
-	}
-	else if (item3[1].checked) {
+	} else if (item3[1].checked) {
 		subtotal3 = item3[1].value * amount3;
 		$('#subtotal-3').innerHTML = '$' + subtotal3;
 	}
 	$('#total').innerHTML = '$' + (subtotal1 + subtotal2 + subtotal3);
 }
-
 
 /**
  * Helper functions
@@ -60,6 +56,7 @@ function handleInputChange() {
 function $(selector, context) {
 	return (context || document).querySelector(selector);
 }
+
 function $all(selector, context) {
 	return (context || document).querySelectorAll(selector);
 }

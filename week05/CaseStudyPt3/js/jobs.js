@@ -6,76 +6,66 @@ function validateAll() {
 	valid = validateExperience();
 	if (!valid) {
 		return false;
-	}
-	else {
+	} else {
 		return true;
 	}
 }
 
 function validateName() {
-	if ($('#job-name').value.length <= 0){
+	if ($('#job-name').value.length <= 0) {
 		alert('Name cannot be empty');
-		styleInvalid($('#job-name'));
+		addClass($('#job-name'), 'invalid');
 		return false;
-	}
-	else if (!regex($('#job-name'), (/[A-Z]/ig))) {
+	} else if (!regex($('#job-name'), (/[A-Z ]/ig))) {
 		alert('Name can only contain alphabets');
-		styleInvalid($('#job-name'));
+		addClass($('#job-name'), 'invalid');
 		return false;
 	} else {
-		styleValid($('#job-name'));
+		removeClass($('#job-name'), 'invalid');
 		return true;
 	}
 }
+
 function validateEmail() {
-	if ($('#job-email').value.length <= 0){
+	if ($('#job-email').value.length <= 0) {
 		alert('Email cannot be empty');
-		styleInvalid($('#job-email'));
+		addClass($('#job-email'), 'invalid');
 		return false;
-	}
-	else if (!regex($('#job-email'), (/^[\w.-]+@[\w.]+\.[A-Z]{2,3}$/ig))) {
+	} else if (!regex($('#job-email'), (/^[\w.-]+@[\w.]+\.[A-Z]{2,3}$/ig))) {
 		alert('Invalid email address');
-		styleInvalid($('#job-email'));
+		addClass($('#job-email'), 'invalid');
 		return false;
 	} else {
-		styleValid($('#job-email'));
+		removeClass($('#job-email'), 'invalid');
 		return true;
 	}
 }
+
 function validateDate() {
 	var
-		today       = new Date(Date.now()),
+		today = new Date(Date.now()),
 		selectedDay = new Date($('#job-date').value);
 
-	if (selectedDay < today){
+	if (selectedDay < today) {
 		alert('Date cannot be in the past');
 		$('#job-date').value = null;
-		// styleInvalid($('#job-date'));
+		// addClass($('#job-date'), 'invalid');
 		return false;
 	} else {
-		// styleValid($('#job-date'));
+		// removeClass($('#job-date'), 'invalid');
 		return true;
 	}
 };
+
 function validateExperience() {
-	if ($('#job-experience').value.length <= 0){
+	if ($('#job-experience').value.length <= 0) {
 		alert('Experience cannot be empty');
-		styleInvalid($('#job-experience'));
+		addClass($('#job-experience'), 'invalid');
 		return false;
 	} else {
-		styleValid($('#job-experience'));
+		removeClass($('#job-experience'), 'invalid');
 		return true;
 	}
-}
-
-function styleInvalid(element) {
-	element.classList.add('invalid');
-}
-function styleValid(element) {
-	element.classList.remove('invalid');
-}
-function regex(element, validator) {
-	return element.value.match(validator);
 }
 
 /**
@@ -89,4 +79,16 @@ function $(selector, context) {
 	} else {
 		return (context || document).querySelector(selector);
 	}
+}
+
+function addClass(element, className) {
+	element.classList.add(className);
+}
+
+function removeClass(element, className) {
+	element.classList.remove(className);
+}
+
+function regex(element, validator) {
+	return element.value.match(validator);
 }
