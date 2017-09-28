@@ -21,7 +21,6 @@ function handleInputChange() {
 			total += subtotal[ii];
 		}
 
-
 		$('#subtotal-' + ii).innerHTML = '$' + subtotal[ii];
 		$('#total').innerHTML = '$' + total;
 	}

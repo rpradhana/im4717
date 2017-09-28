@@ -16,7 +16,7 @@ function validateName() {
 		alert('Name cannot be empty');
 		addClass($('#job-name'), 'invalid');
 		return false;
-	} else if (!regex($('#job-name'), (/[A-Z ]/ig))) {
+	} else if (!regex($('#job-name'), /^[\sA-Z]+(\s+[A-Z]+)*$/i)) {
 		alert('Name can only contain alphabets');
 		addClass($('#job-name'), 'invalid');
 		return false;
@@ -31,7 +31,7 @@ function validateEmail() {
 		alert('Email cannot be empty');
 		addClass($('#job-email'), 'invalid');
 		return false;
-	} else if (!regex($('#job-email'), (/^[\w.-]+@[\w.]+\.[A-Z]{2,3}$/ig))) {
+	} else if (!regex($('#job-email'), /^[\w.-]+@([\w.]+\.){1,3}[\w.]{2,3}$/i)) {
 		alert('Invalid email address');
 		addClass($('#job-email'), 'invalid');
 		return false;
@@ -43,11 +43,11 @@ function validateEmail() {
 
 function validateDate() {
 	var
-		today = new Date(Date.now()),
+		today       = new Date(Date.now()),
 		selectedDay = new Date($('#job-date').value);
 
 	if (selectedDay < today) {
-		alert('Date cannot be in the past');
+		alert('Date cannot be in the past/today');
 		$('#job-date').value = null;
 		// addClass($('#job-date'), 'invalid');
 		return false;
@@ -90,5 +90,6 @@ function removeClass(element, className) {
 }
 
 function regex(element, validator) {
-	return element.value.match(validator);
+	// return element.value.match(validator);
+	return validator.test(element.value);
 }
