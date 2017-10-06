@@ -177,3 +177,25 @@ td {
 #menu input[type=number] {
 	width: 40px;
 }
+#total {
+	display: block;
+	clear: left;
+}
+.btn {
+	display: block;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: inherit;
+	cursor: pointer;
+}
+.btn.primary {
+	color: #F4F4DB;
+	background-color: #2E0000;
+	padding: 8px 16px;
+	border: 0;
+	border-radius: 4px;
+}
+#menu .btn.submit {
+	margin-top: 8px;
+	clear: left;
+}
