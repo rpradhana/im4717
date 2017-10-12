@@ -1,0 +1,209 @@
+/**
+ * Global
+ */
+body {
+	font-family: Verdana, Arial, sans-serif;
+	color: #2E0000;
+	background-color: #F4EDB6;
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.3em;
+	width: 100%;
+}
+ul {
+	margin:0px;
+	padding-left: 1.3em;
+}
+h2 {
+	font-weight: bold;
+}
+a {
+	color: #795240;
+}
+a:visited {
+	color: #795240;
+}
+a:hover,
+a:focus {
+	color: #A58366;
+}
+nav ul {
+	text-align: center;
+	list-style-type: none;
+	padding: 0;
+	margin: auto;
+	margin-top: 24px;
+}
+nav a {
+	font-weight: bold;
+	text-decoration: none;
+}
+header{
+	background-color: #D2B48C;
+	padding: 10px 0px;
+	text-align: center;
+}
+footer {
+	background-color: #D2B48C;
+	font-size:70%;
+	text-align: center;
+	clear: both;
+	padding: 24px 0px;
+}
+#wrapper{
+	max-width: 1200px;
+	margin: auto;
+	margin-top: 40px;
+	background-color: #E2D2B0;
+	-webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.row {
+	display: flex;
+	width: 100%;
+}
+.col-left {
+	width: 150px;
+	background-color: #E2D2B0;
+}
+.col-right {
+	vertical-align: top;
+	width: 100%;
+	background-color: #F4F4DB;
+}
+.float-right {
+	margin: 10px;
+	float: right;
+}
+.content {
+	padding: 24px 40px; 
+}
+.content > h2 {
+	margin-top: 0;
+}
+.margin-left-s {
+	margin-left: 16px;
+}
+.margin-right-s {
+	margin-right: 16px;
+}
+.margin-bottom-s {
+	margin-bottom: 16px;
+}
+.margin-top-s{
+	margin-top: 16px;
+}
+.inline-block {
+	display: inline-block;
+}
+.align-top {
+	vertical-align: top;
+}
+.align-center {
+	text-align: center;
+}
+.invalid {
+	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,0,0,1);
+	-moz-box-shadow:    0px 0px 1px 1px rgba(255,0,0,1);
+	box-shadow:         0px 0px 1px 1px rgba(255,0,0,1);
+}
+/**
+ * Override
+ */
+.content-left {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	margin-right: 16px;
+	margin-bottom: 16px;
+}
+.content-right {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+table {
+	max-width: 800px;
+	margin: auto;
+}
+tr:nth-child(odd) {
+	background-color: #D2B48C;
+}
+td {
+	padding: 0px 20px;
+}
+.music-item {
+	max-width: 640px;
+	margin: 40px auto;
+	text-align: left;
+}
+.music-item > h3{
+	background-color: #E2D2B0;
+	margin: 0px auto;
+	padding: 8px;
+}
+.music-item > div.content-left > img,
+.music-item > div.content-left > video {
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 16px;
+}
+.job-application label {
+	margin: 8px 16px 8px 0px;
+	display: block;
+	float: left;
+	clear: left;
+	text-align: right;
+	width: 110px;
+}
+.job-application input,
+.job-application textarea {
+	margin: 8px 16px 8px 0px;
+	float: left;
+}
+.job-application .btn-submit {
+	clear: left;
+	margin: 20px 0px;
+}
+#menu ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+#menu ul > li {
+	margin-bottom: 5px;
+}
+#menu input[type=number] {
+	width: 40px;
+}
+#total {
+	display: block;
+	clear: left;
+}
+.btn {
+	display: block;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: inherit;
+	cursor: pointer;
+}
+.btn.primary {
+	color: #F4F4DB;
+	background-color: #2E0000;
+	padding: 8px 16px;
+	border: 0;
+	border-radius: 4px;
+}
+#menu .btn.submit {
+	margin-top: 8px;
+	clear: left;
+}
+.modal {
+	display: block;
+	padding: 60px;
+	position: fixed;
+	text-align: center;
+	background: #FFFFFF;
+	box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.15);
+}

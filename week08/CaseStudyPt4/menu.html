@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>JavaJam Coffee House</title>
+	<meta charset="utf-8">
+	<meta http-equiv="cache-control" content="no-cache" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<img src="img/header.jpg">
+		</header>
+		<div class="row">
+			<div class="col-left">
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="menu.html">Menu</a></li>
+						<li><a href="music.html">Music</a></li>
+						<li><a href="jobs.html">Jobs</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-right">
+				<div class="content">
+					<h2>Coffee at JavaJam</h2>
+					<form id="menu-form" method="post" action="">
+						<table id="menu">
+							<tr class="odd">
+								<td>
+									<h3>Just Java</h3>
+								</td>
+								<td>
+									<p>
+										Regular house blend, decaffeinated coffee, or flavor of the day.
+									</p>
+								</td>
+								<td width="150px">
+									<input type="radio" onchange="handleInputChange()" name="item-0" value="2.00" checked="true"> Endless Cup $2.00
+								</td>
+								<td width="50px"> 
+									<label>Quantity</label>
+									<input id="amount-0" size="4" onchange="handleInputChange()" type="text" value="0" min="0"> </td>
+								</td>
+								<td>
+									<span id="subtotal-0">$0</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h3>Cafe au Lait</h3>
+								</td>
+								<td>
+									<p>
+										House blended coffee infused into a smooth, steamed milk.
+									</p>
+								</td>
+								<td width="150px">
+									<ul>
+										<li><input type="radio" onchange="handleInputChange()" name="item-1" value="3.00" checked="true">Double $3.00
+										<li><input type="radio" onchange="handleInputChange()" name="item-1" value="2.00">Single $2.00
+									</ul>
+								</td>
+								<td width="50px">
+									<label>Quantity</label>
+									<input id="amount-1" size="4" onchange="handleInputChange()" type="text" value="0" min="0"> </td>
+								</td>
+								<td>
+									<span id="subtotal-1">$0</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h3>Iced Capuccino</h3>
+								</td>
+								<td>
+									<p>
+										Sweetened espresso blended with icy-cold milk and served in a chilled glass.
+									</p>
+								</td>
+								<td width="150px">
+									<ul>
+										<li><input type="radio" onchange="handleInputChange()" name="item-2" value="4.75" checked="true">Single $4.75
+										<li><input type="radio" onchange="handleInputChange()" name="item-2" value="5.75">Double $5.75
+									</ul>
+								</td>
+								<td width="50px">
+									<label>Quantity</label>
+									<input id="amount-2" size="4" onchange="handleInputChange()" type="text" value="0" min="0"> </td>
+								</td>
+								<td>
+									<span id="subtotal-2">$0</span>
+								</td>
+							</tr>
+							<tr height="50px">
+								<td colspan="4"></td>
+								<td width="60px">
+									<strong>TOTAL <span id="total">$0</span></strong>
+									<button type="submit" class="btn primary submit">Order</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer>
+			Copyright &copy; 2014 JavaJam Coffee House
+			<br>
+			<a href="mailto:raymond@pradhana.com">raymond@pradhana.com</a>
+		</footer>
+	</div>
+	<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>
+
+
