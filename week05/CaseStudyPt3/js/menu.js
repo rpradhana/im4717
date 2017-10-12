@@ -28,7 +28,7 @@ function handleInputChange() {
 
 // input must be a number
 function validateInput(item) {
-	return !(isNaN(item));
+	return !(isNaN(item) || (item < 0));
 }
 
 // calculate the subtotal of each item

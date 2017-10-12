@@ -13,6 +13,7 @@
 		$amount0 = '';
 		$amount1 = '';
 		$amount2 = '';
+		$total = '';
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			// Sanitize inputs
@@ -27,14 +28,19 @@
 			// Ignore order quantity if price doesn't match
 			switch($_POST['item-0']) {
 				case 2.00: $item0 = 2.00;
+				break;
 			}
 			switch($_POST['item-1']) {
 				case 3.00: $item1 = 3.00;
+				break;
 				case 2.00: $item1 = 2.00;
+				break;
 			}
 			switch($_POST['item-2']) {
 				case 4.75: $item2 = 4.75;
+				break;
 				case 5.75: $item2 = 5.75;
+				break;
 			}
 		}
 
@@ -78,20 +84,20 @@
 								</td>
 								<td width="150px">
 									<input type="radio"
-										name="item-0"
-										value="2.00"
-										onchange="handleInputChange()"
-										checked="true"> Endless Cup $2.00
+									       name="item-0"
+									       value="2.00"
+									       onchange="handleInputChange()"
+									       checked="true"> Endless Cup $2.00
 								</td>
 								<td width="50px"> 
 									<label>Quantity</label>
 									<input type="text"
-										id="amount-0"
-										name="amount-0"
-										value="<?= $amount0 ?>"
-										size="4"
-										min="0"
-										onchange="handleInputChange()">
+									       id="amount-0"
+									       name="amount-0"
+									       value="<?= $amount0 ?>"
+									       size="4"
+									       min="0"
+									       oninput="handleInputChange()">
 								</td>
 								<td>
 									<span id="subtotal-0">
@@ -135,7 +141,7 @@
 									       value="<?= $amount1 ?>"
 									       size="4"
 									       min="0""
-									       onchange="handleInputChange()">
+									       oninput="handleInputChange()">
 								</td>
 								<td>
 									<span id="subtotal-1">
@@ -179,7 +185,7 @@
 									       value="<?= $amount2 ?>"
 									       size="4"
 									       min="0"
-									       onchange="handleInputChange()">
+									       oninput="handleInputChange()">
 								</td>
 								<td>
 									<span id="subtotal-2">
@@ -194,11 +200,12 @@
 									<strong>TOTAL
 										<span id="total">
 											<?php
-												echo '$' . (($item0 * $amount0) + ($item1 * $amount1) + ($item2 * $amount2));
+												$total = (($item0 * $amount0) + ($item1 * $amount1) + ($item2 * $amount2));
+												echo '$' . $total;
 											?>
 										</span>
 									</strong>
-									<button class="btn primary submit" name="submit" value="Submit">Order</button>
+									<button class="btn primary submit" name="submit" value="Submit" onclick="alert('Thank you for your order!')">Order</button>
 								</td>
 							</tr>
 						</table>

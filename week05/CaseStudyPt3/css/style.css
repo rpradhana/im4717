@@ -199,3 +199,11 @@ td {
 	margin-top: 8px;
 	clear: left;
 }
+.modal {
+	display: block;
+	padding: 60px;
+	position: fixed;
+	text-align: center;
+	background: #FFFFFF;
+	box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.15);
+}
