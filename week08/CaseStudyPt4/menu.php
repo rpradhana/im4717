@@ -7,6 +7,34 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<?php
+		/**
+		 * Connect DB
+		 */
+		$servername = "localhost";
+		$username = "f36im";
+		$password = "f36im";
+		$database = "f36im";
+
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $database);
+
+		// Check connection
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		echo '<script>console.log("Connection established")</script>';
+
+		$variant1 = $conn->query("SELECT * FROM ProductVariant WHERE ID=1");
+		$variant2 = $conn->query("SELECT * FROM ProductVariant WHERE ID=2");
+		$variant3 = $conn->query("SELECT * FROM ProductVariant WHERE ID=3");
+		$variant4 = $conn->query("SELECT * FROM ProductVariant WHERE ID=4");
+		$variant5 = $conn->query("SELECT * FROM ProductVariant WHERE ID=5");
+		while ($row = $variant1->fetch_assoc()) {$price1 = $row["Price"];}
+		while ($row = $variant2->fetch_assoc()) {$price2 = $row["Price"];}
+		while ($row = $variant3->fetch_assoc()) {$price3 = $row["Price"];}
+		while ($row = $variant4->fetch_assoc()) {$price4 = $row["Price"];}
+		while ($row = $variant5->fetch_assoc()) {$price5 = $row["Price"];}
+
 		$item0 = '';
 		$item1 = '';
 		$item2 = '';
@@ -27,21 +55,21 @@
 			// Check input value
 			// Ignore order quantity if price doesn't match
 			switch($_POST['item-0']) {
-				case 2.00: $item0 = 2.00;
+				case $price1: $item0 = $price1;
 				break;
 				default: $item0 = 0;
 			}
 			switch($_POST['item-1']) {
-				case 3.00: $item1 = 3.00;
+				case $price2: $item1 = $price2;
 				break;
-				case 2.00: $item1 = 2.00;
+				case $price3: $item1 = $price3;
 				break;
 				default: $item1 = 0;
 			}
 			switch($_POST['item-2']) {
-				case 4.75: $item2 = 4.75;
+				case $price4: $item2 = $price4;
 				break;
-				case 5.75: $item2 = 5.75;
+				case $price5: $item2 = $price5;
 				break;
 				default: $item2 = 0;
 			}
@@ -88,9 +116,9 @@
 								<td width="150px">
 									<input type="radio"
 									       name="item-0"
-									       value="2.00"
+									       value="<?= $price1 ?>"
 									       onchange="handleInputChange()"
-									       checked="true"> Endless Cup $2.00
+									       checked="true"> Endless Cup $<?php echo $price1; ?>
 								</td>
 								<td width="50px"> 
 									<label>Quantity</label>
@@ -123,17 +151,17 @@
 									<ul>
 										<li><input type="radio"
 											       name="item-1"
-											       value="3.00"
+											       value="<?= $price2 ?>"
 											       onchange="handleInputChange()"
 											       checked="true"
-											       <?php if (isset($_POST['item-1']) && $_POST['item-1'] == '3.00'): ?>checked='checked'
-											       <?php endif; ?>> Double $3.00
+											       <?php if (isset($_POST['item-1']) && $_POST['item-1'] == $price2): ?>checked='checked'
+											       <?php endif; ?>> Double $<?php echo $price2; ?>
 										<li><input type="radio"
 											       name="item-1"
-											       value="2.00"
+											       value="<?= $price3 ?>"
 											       onchange="handleInputChange()"
-											       <?php if (isset($_POST['item-1']) && $_POST['item-1'] == '2.00'): ?>checked='checked'
-											       <?php endif; ?>> Single $2.00
+											       <?php if (isset($_POST['item-1']) && $_POST['item-1'] == $price3): ?>checked='checked'
+											       <?php endif; ?>> Single $<?php echo $price3; ?>
 									</ul>
 								</td>
 								<td width="50px">
@@ -167,17 +195,17 @@
 									<ul>
 										<li><input type="radio"
 											       name="item-2"
-											       value="4.75"
+											       value="<?= $price4 ?>"
 											       onchange="handleInputChange()"
 											       checked="true"
-											       <?php if (isset($_POST['item-2']) && $_POST['item-2'] == '4.75'): ?>checked='checked'
-											       <?php endif; ?>> Single $4.75
+											       <?php if (isset($_POST['item-2']) && $_POST['item-2'] == $price4): ?>checked='checked'
+											       <?php endif; ?>> Single $<?php echo $price4; ?>
 										<li><input type="radio"
 											       name="item-2"
-											       value="5.75"
+											       value="<?= $price5 ?>"
 											       onchange="handleInputChange()"
-											       <?php if (isset($_POST['item-2']) && $_POST['item-2'] == '5.75'): ?>checked='checked'
-											       <?php endif; ?>> Double $5.75
+											       <?php if (isset($_POST['item-2']) && $_POST['item-2'] == $price5): ?>checked='checked'
+											       <?php endif; ?>> Double $<?php echo $price5; ?>
 									</ul>
 								</td>
 								<td width="50px">

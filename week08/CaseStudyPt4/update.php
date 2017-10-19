@@ -13,8 +13,8 @@
 		 * Connect DB
 		 */
 		$servername = "localhost";
-		$username = "root";
-		$password = "";
+		$username = "f36im";
+		$password = "f36im";
 		$database = "f36im";
 
 		// Create connection
@@ -35,8 +35,8 @@
 		if($_SERVER["REQUEST_METHOD"] == "POST") {
 			for ($ii = 0; $ii < count($_POST["price"]); $ii++) {
 				$prices[$ii] = sanitize($_POST["price"][$ii]);
-				echo '<script>console.log(' . $_POST["price"][$ii] . ')</script>';
-				$conn->query("UPDATE `productvariant` SET `Price` = " . $prices[$ii] . " WHERE . `productvariant`.`ID` = " . ($ii+1));
+				echo '<script>console.log(' . $prices[$ii] . ')</script>';
+				$conn->query("UPDATE `ProductVariant` SET `Price` = " . $prices[$ii] . " WHERE . `ProductVariant`.`ID` = " . ($ii+1));
 			}
 			echo '<script>console.log("Database update success.")</script>';
 		} else {
