@@ -88,6 +88,9 @@
 						<li>Cafe Au Lait: $<?= $total2 ?></li>
 						<li>Iced Cappuccino: $<?= $total3 ?></li>
 					</ul>
+					<h3>
+						TOTAL: <?= $total1 + $total2 + $total3?>
+					</h3>
 				</div>
 			</div>
 		</div>
