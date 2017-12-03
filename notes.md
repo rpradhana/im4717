@@ -34,9 +34,6 @@ ab|cd		match ab or cd
 
 # HTML/CSS
 
-## Alignment
-margin: auto;
-
 ### Flex
 
 display: flex;

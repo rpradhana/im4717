@@ -76,7 +76,6 @@
 			</label>
 		</form>
 		<img src="" alt="">
-		<a href=""></a>
 		<a href="" target="_blank"></a>
 		<a href="tel:+6598765432"></a>
 		<a href="mailto:address@domain.com"></a>
@@ -140,11 +139,29 @@
 		/**
 		 * isset check for superglobals
 		 */
-		if(isset($_POST["mail"]) && !empty($_POST["mail"])) {
+		if (isset($_POST["mail"]) && !empty($_POST["mail"])) {
 			echo "Yes, mail is set";    
-		} else{
+		} else {
 			echo "N0, mail is not set";
 		}
+
+		if (isset($_SESSION['valid_user'])) {
+			echo 'You are logged in as: ' . $_SESSION['valid_user'];
+		}
+
+		if (isset($_GET["sortby"])) {
+			$sortby = $_GET["sortby"];
+		}
+
+		/**
+		 * Sending mails
+		 */
+		$to      = 'address@domain.com';
+		$subject = 'subject';
+		$message = 'message';
+		$headers = 'From: address@domain.com' . '\r\n' .
+		           'Reply-To: address@domain.com' . '\r\n' .
+		           'X-Mailer: PHP/' . phpversion();
 
 	?>
 
@@ -155,6 +172,18 @@
 	<script type="text/javascript">
 		var regex = /[A-Za-z]/;
 		regex.test('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+		var element  = document.getElementById('id');
+		var elements = document.getElementsByClassName('id');
+		var element  =  document.querySelector('#id');
+		var elements =  document.querySelector('.class');
+
+		var Object = function(args) {
+			this.args = args;
+
+			Object.prototype.method_name = function(first_argument) {
+				// body...
+			};
+		}
 	</script>
 
 	<script type="text/javascript" src='./js/main.js'></script>
